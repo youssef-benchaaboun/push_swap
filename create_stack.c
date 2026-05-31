@@ -3,8 +3,9 @@
 t_stack	*create_stack(int size)
 {
 	t_stack	*stack;
-	if(size<=0)
-		return NULL;
+
+	if (size <= 0)
+		return (NULL);
 	stack = malloc(sizeof(t_stack));
 	if (!stack)
 		return (NULL);

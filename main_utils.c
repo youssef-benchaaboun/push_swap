@@ -3,9 +3,9 @@
 int	ft_error(t_stack *a, t_stack *b)
 {
 	if (a)
-		destroy_stack(a);
+		destroy_stack (a);
 	if (b)
-		destroy_stack(b);
+		destroy_stack (b);
 	write(2, "Error\n", 6);
 	return (1);
 }

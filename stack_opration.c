@@ -7,7 +7,7 @@ int	swap_stack(t_stack *a, char c)
 
 	top = a->top;
 	if (top < 1)
-		return 0;
+		return (0);
 	tmp = a->tab[top];
 	a->tab[top] = a->tab[top - 1];
 	a->tab[top - 1] = tmp;
@@ -15,7 +15,7 @@ int	swap_stack(t_stack *a, char c)
 		write(1, "sa\n", 3);
 	else if (c == 'b')
 		write(1, "sb\n", 3);
-	return 1;
+	return (1);
 }
 
 int	push_in(t_stack *src, t_stack *dest, char c)
@@ -24,14 +24,14 @@ int	push_in(t_stack *src, t_stack *dest, char c)
 
 	top = src->top;
 	if (top < 0)
-		return 0;
+		return (0);
 	push_stack(dest, src->tab[top]);
 	pop(src);
 	if (c == 'a')
 		write(1, "pa\n", 3);
 	else if (c == 'b')
 		write(1, "pb\n", 3);
-	return 1;
+	return (1);
 }
 
 int	re_rotate_stack(t_stack *a, char c)
@@ -41,7 +41,7 @@ int	re_rotate_stack(t_stack *a, char c)
 
 	i = 0;
 	if (a->top < 1)
-		return 0;
+		return (0);
 	last = a->tab[0];
 	while (i < a->top)
 	{
@@ -49,7 +49,7 @@ int	re_rotate_stack(t_stack *a, char c)
 		i++;
 	}
 	a->tab[(a->top)] = last;
-	return 1;
+	return (1);
 	if (c == 'a')
 		write(1, "rra\n", 4);
 	else if (c == 'b')
@@ -65,7 +65,7 @@ int	rotate_stack(t_stack *a, char c)
 	top = a->top;
 	i = top;
 	if (top < 1)
-		return 0;
+		return (0);
 	first = a->tab[top];
 	while (i > 0)
 	{
@@ -77,6 +77,5 @@ int	rotate_stack(t_stack *a, char c)
 		write(1, "ra\n", 3);
 	else if (c == 'b')
 		write(1, "rb\n", 3);
-	return 1;
-	
+	return (1);
 }
