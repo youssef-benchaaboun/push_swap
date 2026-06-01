@@ -56,15 +56,15 @@ static t_benchmark	*intiat_bench(t_stack *a, t_option *op)
 	return (bench);
 }
 
-void	decide_algorithm(t_stack *a, t_stack *b, t_option *op)
+void	decide_algorithm(t_stack *a, t_stack *b, t_option *op, int argc)
 {
 	t_benchmark	*bench;
 
 	bench = intiat_bench(a, op);
 	if (op->simple)
 		ft_simple(a, b, bench);
-	//else if(op->medium)
-		//we implement later ft_meduim
+	else if(op->medium)
+		ft_medium(a, b, bench, argc);
 	//else if(op->complx)
 		//we implement later ft_complex
 	//else if(op->adaptive)

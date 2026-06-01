@@ -10,7 +10,9 @@ int	ft_stack_min(t_stack *a)
 	while (i <= a->top)
 	{
 		if (a->tab[i] < min)
+		{
 			min = a->tab[i];
+		}
 		i++;
 	}
 	return (min);

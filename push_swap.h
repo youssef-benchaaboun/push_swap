@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yoben-ch <yoben-ch@student.42.fr>          +#+  +:+       +#+        */
+/*   By: stelescu <stelescu@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/13 00:00:00 by youssef           #+#    #+#             */
-/*   Updated: 2026/05/27 21:48:09 by yoben-ch         ###   ########.fr       */
+/*   Updated: 2026/06/01 13:35:52 by stelescu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <stdarg.h>
+# include "libft/libft.h"
 
 typedef struct s_stack
 {
@@ -70,11 +71,14 @@ int		already_option(t_option *p);
 int		ft_option(char *s, t_option *p);
 int		ft_skip(t_option *op, char **av, int ac);
 void	ft_bzero(void *p, size_t size);
-void	decide_algorithm(t_stack *a, t_stack *b, t_option *op);
+void	decide_algorithm(t_stack *a, t_stack *b, t_option *op, int ac);
 void	ft_simple(t_stack *a, t_stack *b, t_benchmark *bench);
 char	*get_next_line(int fd);
 int		ft_opration(char *s, t_stack *a, t_stack *b);
 void	display_bench(t_benchmark *bench);
 int		ft_printf(const char *s, ...);
+int		ft_find_sqrt(int nb);
+int		*ft_range(int min, int max);
+void	ft_medium(t_stack *a, t_stack *b, t_benchmark *bench, int nb_count);
 
 #endif

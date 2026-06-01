@@ -16,7 +16,7 @@ int	main(int ac, char **av)
 	b = create_stack(ac - 1);
 	if (!b)
 		return (ft_error(a, NULL));
-	decide_algorithm(a, b, &op);
+	decide_algorithm(a, b, &op, ac -2);
 	destroy_stack(a);
 	destroy_stack(b);
 	return (0);
