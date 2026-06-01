@@ -6,7 +6,7 @@
 /*   By: stelescu <stelescu@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/13 00:00:00 by youssef           #+#    #+#             */
-/*   Updated: 2026/06/01 13:35:52 by stelescu         ###   ########.fr       */
+/*   Updated: 2026/06/01 16:17:09 by stelescu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@
 typedef struct s_stack
 {
 	int	*tab;
+	int *coord_value;
 	int	size;
 	int	top;
 }		t_stack;

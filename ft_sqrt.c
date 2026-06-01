@@ -42,7 +42,23 @@ int	*ft_range(int min, int max)
 	return (range);
 }
 
-int	index_nums(t_stack a)
+void	ft_coordinate(t_stack *a)
 {
-	
+	int	i;
+	int	j;
+	int	index_value;
+
+	i = 0;
+	index_value = 0;
+	while (a->tab[i])
+	{
+		j = i + 1;
+		while (a->tab[j])
+		{
+			if (a->tab[j] < a->tab[i])
+				a->coord_value[j] = index_value;
+		}
+		index_value++;
+		i++;
+	}
 }

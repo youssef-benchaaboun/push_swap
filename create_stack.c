@@ -12,6 +12,9 @@ t_stack	*create_stack(int size)
 	stack->tab = malloc(size * sizeof(int));
 	if (!(stack->tab))
 		return (free(stack), NULL);
+	stack->coord_value = malloc(size * sizeof(int));
+	if (!(stack->coord_value))
+		return (free(stack), NULL);
 	stack->size = size;
 	stack->top = -1;
 	return (stack);
