@@ -30,13 +30,13 @@ void	medium_phase_one(t_stack *a, t_stack *b, t_benchmark *bench, int s)
 			range_max *= 2;
 	}
 }
-
 void	medium_phase_three(t_stack *a, t_stack *b, t_benchmark *bench)
 {
 	int	max;
 	int	i;
 	int	rotations;
-
+	int j;
+	
 	while (b->top > -1)
 	{
 		max = b->tab[b->top];
@@ -51,17 +51,24 @@ void	medium_phase_three(t_stack *a, t_stack *b, t_benchmark *bench)
 			}
 			i++;
 		}
-		while (b->tab[b->top] != max)
+		if (rotations <= b->top / 2)
 		{
-			if (rotations <= b->top / 2)
+			j = 0;
+			while (j < rotations)
 			{
 				rotate_stack(b, 'b');
 				(bench->rb)++;
+				j++;
 			}
-			else
+		}
+		else
+		{
+			j = 0;
+			while (j <= b->top - rotations)
 			{
 				re_rotate_stack(b, 'b');
 				(bench->rrb)++;
+				j++;
 			}
 		}
 		push_in(b, a, 'a');
