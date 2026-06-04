@@ -46,19 +46,31 @@ void	ft_coordinate(t_stack *a)
 {
 	int	i;
 	int	j;
-	int	index_value;
+	int	count;
+	int	*temp;
 
+	temp = malloc((a->top + 1) * sizeof(int));
+	if (!temp)
+		return ;
 	i = 0;
-	index_value = 0;
-	while (a->tab[i])
+	while (i <= a->top)
 	{
-		j = i + 1;
-		while (a->tab[j])
+		count = 0;
+		j = 0;
+		while (j <= a->top)
 		{
 			if (a->tab[j] < a->tab[i])
-				a->coord_value[j] = index_value;
+				count++;
+			j++;
 		}
-		index_value++;
+		temp[i] = count;
 		i++;
 	}
+	i = 0;
+	while (i <= a->top)
+	{
+		a->tab[i] = temp[i];
+		i++;
+	}
+	free(temp);
 }

@@ -38,10 +38,10 @@ static t_benchmark	*intiat_bench(t_stack *a, t_option *op)
 {
 	t_benchmark	*bench;
 
-	bench = malloc(sizeof(t_benchmark *));
+	bench = malloc(sizeof(*bench));
 	if (!bench)
 		return (NULL);
-	ft_bzero (bench, sizeof(t_benchmark));
+	ft_bzero(bench, sizeof(*bench));
 	bench->disorder = ft_disorder (a);
 	if (op->simple)
 		bench->startegy = "Simple / O(n^2)";
@@ -61,6 +61,7 @@ void	decide_algorithm(t_stack *a, t_stack *b, t_option *op, int argc)
 	t_benchmark	*bench;
 
 	bench = intiat_bench(a, op);
+	ft_coordinate(a);
 	if (op->simple)
 		ft_simple(a, b, bench);
 	else if(op->medium)

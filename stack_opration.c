@@ -48,25 +48,23 @@ int	re_rotate_stack(t_stack *a, char c)
 		a->tab[i] = a->tab[i + 1];
 		i++;
 	}
-	a->tab[(a->top)] = last;
-	return (1);
+	a->tab[a->top] = last;
 	if (c == 'a')
 		write(1, "rra\n", 4);
 	else if (c == 'b')
 		write(1, "rrb\n", 4);
+	return (1);
 }
 
 int	rotate_stack(t_stack *a, char c)
 {
-	int	top;
 	int	first;
 	int	i;
 
-	top = a->top;
-	i = top;
-	if (top < 1)
+	i = a->top;
+	if (a->top < 1)
 		return (0);
-	first = a->tab[top];
+	first = a->tab[a->top];
 	while (i > 0)
 	{
 		a->tab[i] = a->tab[i - 1];

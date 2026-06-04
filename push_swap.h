@@ -16,12 +16,11 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <stdarg.h>
-# include "libft/libft.h"
+
 
 typedef struct s_stack
 {
 	int	*tab;
-	int *coord_value;
 	int	size;
 	int	top;
 }		t_stack;
@@ -81,5 +80,6 @@ int		ft_printf(const char *s, ...);
 int		ft_find_sqrt(int nb);
 int		*ft_range(int min, int max);
 void	ft_medium(t_stack *a, t_stack *b, t_benchmark *bench, int nb_count);
+void	ft_coordinate(t_stack *a);
 
 #endif

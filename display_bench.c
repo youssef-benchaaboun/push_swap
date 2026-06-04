@@ -19,7 +19,7 @@ void	display_bench(t_benchmark *bench)
 	ft_printf("[bench] total_ops: %d\n", count_total(bench));
 	ft_printf("[bench] sa: %d sb: %d pa: %d pb: %d\n",
 		bench->sa, bench->sb, bench->pa, bench->pb);
-	ft_printf("[bench] ra: %d rb: %d rr: %d rra: %d rrb: %d rrr: %d\n", 
+	ft_printf("[bench] ra: %d rb: %d rr: %d rra: %d rrb: %d rrr: %d\n",
 		bench->ra, bench->rb, bench->rr, bench->rra, bench->rrb, bench->rrr);
 	free(bench);
 }

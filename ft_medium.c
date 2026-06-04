@@ -1,44 +1,80 @@
 #include "push_swap.h"
 
-int	count_buckets(int num)
+void	medium_phase_one(t_stack *a, t_stack *b, t_benchmark *bench, int s)
 {
-	int j;
+	int	bucket_size;
+	int	range_max;
 
-	j = 1;
-	while (j < ft_find_sqrt(num))
-		j++;
-	return (j);
-}
-
-void	ft_medium(t_stack *a, t_stack *b, t_benchmark *bench, int nb_count)
-{
-	int	bucket_count;
-	int range_max;
-	int range_min;
-	int i;
-
-	i = 2;
-	bucket_count = count_buckets(nb_count);
-	range_max = ft_find_sqrt(nb_count) * i;
-	range_min = ft_find_sqrt(nb_count);
-	while (a->top > - 1)
+	bucket_size = ft_find_sqrt(s);
+	if (bucket_size <= 0)
+		bucket_size = 1;
+	range_max = bucket_size;
+	while (a->top > -1)
 	{
-		if (a->tab[0] <= range_max && a->tab[0] >= range_min)
+		if (a->tab[a->top] < range_max)
 		{
 			push_in(a, b, 'b');
 			(bench->pb)++;
+			if (b->top > 0 && (b->tab[b->top] < bucket_size / 2))
+			{
+				rotate_stack(b, 'b');
+				(bench->rb)++;
+			}
 		}
 		else
 		{
 			rotate_stack(a, 'a');
 			(bench->ra)++;
 		}
-		if (b->top >= ft_find_sqrt(nb_count) && b->top < nb_count)
-		{
+		if (b->top >= range_max - 1 && b->top < s)
 			range_max *= 2;
-			range_min *= 2;
-		}
 	}
 }
 
-//--medium --bench 5 4 3 2 1
+void	medium_phase_three(t_stack *a, t_stack *b, t_benchmark *bench)
+{
+	int	max;
+	int	i;
+	int	rotations;
+
+	while (b->top > -1)
+	{
+		max = b->tab[b->top];
+		i = 0;
+		rotations = 0;
+		while (i <= b->top)
+		{
+			if (b->tab[i] > max)
+			{
+				max = b->tab[i];
+				rotations = i;
+			}
+			i++;
+		}
+		while (b->tab[b->top] != max)
+		{
+			if (rotations <= b->top / 2)
+			{
+				rotate_stack(b, 'b');
+				(bench->rb)++;
+			}
+			else
+			{
+				re_rotate_stack(b, 'b');
+				(bench->rrb)++;
+			}
+		}
+		push_in(b, a, 'a');
+		(bench->pa)++;
+	}
+}
+
+void	ft_medium(t_stack *a, t_stack *b, t_benchmark *bench, int nb_count)
+{
+	if (!a || !b || nb_count <= 0)
+		return ;
+	if (nb_count <= 1)
+		return ;
+	medium_phase_one(a, b, bench, nb_count);
+	medium_phase_three(a, b, bench);
+}
