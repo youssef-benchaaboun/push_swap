@@ -24,19 +24,16 @@ int	find_max_index(t_stack *b)
 
 int	swap_to_top(t_stack *b, t_benchmark *bench)
 {
-	int	flag;
-
-	flag = 0;
 	if (find_max_index(b) == b->top - 1)
 	{
 		swap_stack(b, 'b');
 		(bench->sb)++;
-		flag = 1;
+		return (1);
 	}
-	return (flag);
+	return (0);
 }
 
-void	medium_sort_a(t_stack *a, t_stack *b, t_benchmark *bench)
+static void	medium_sort_a(t_stack *a, t_stack *b, t_benchmark *bench)
 {
 	int	max_i;
 	
