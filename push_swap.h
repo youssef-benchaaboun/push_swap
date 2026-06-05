@@ -81,5 +81,8 @@ int		ft_find_sqrt(int nb);
 int		*ft_range(int min, int max);
 void	ft_medium(t_stack *a, t_stack *b, t_benchmark *bench, int nb_count);
 void	ft_coordinate(t_stack *a);
+void	medium_fill_b(t_stack *a, t_stack *b, t_benchmark *bench, int s);
+void	max_to_top(t_stack *b, t_benchmark *bench, int max_idx);
+int		swap_to_top(t_stack *b, t_benchmark *bench);
 
 #endif
