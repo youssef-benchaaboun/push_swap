@@ -6,7 +6,7 @@
 /*   By: stelescu <stelescu@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/13 00:00:00 by youssef           #+#    #+#             */
-/*   Updated: 2026/06/01 16:17:09 by stelescu         ###   ########.fr       */
+/*   Updated: 2026/06/08 00:44:16 by stelescu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,5 +84,11 @@ void	ft_coordinate(t_stack *a);
 void	medium_fill_b(t_stack *a, t_stack *b, t_benchmark *bench, int s);
 void	max_to_top(t_stack *b, t_benchmark *bench, int max_idx);
 int		swap_to_top(t_stack *b, t_benchmark *bench);
+char	**ft_split(char *s, char c);
+char	*ft_strjoin(char *s1, char *s2);
+char	*ft_strdup(char *s);
+int		ft_count_words(char *s, char c);
+void	free_split(char **split);
+char	*join_args(char **av, int ac);
 
 #endif
