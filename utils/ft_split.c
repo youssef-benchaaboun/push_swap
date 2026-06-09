@@ -71,7 +71,7 @@ static char	**ft_matrix(char **m, char *s, char c, int len)
 {
 	int	i;
 	int	j;
-	int		start;
+	int	start;
 
 	start = -1;
 	i = 0;

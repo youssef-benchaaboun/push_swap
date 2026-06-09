@@ -64,11 +64,11 @@ void	decide_algorithm(t_stack *a, t_stack *b, t_option *op, int argc)
 	ft_coordinate(a);
 	if (op->simple)
 		ft_simple(a, b, bench);
-	else if(op->medium)
+	else if (op->medium)
 		ft_medium(a, b, bench, argc);
-	else if(op->complx)
+	else if (op->complx)
 		radix_sort(a,b,bench);
-	//else if(op->adaptive)
+	//else if (op->adaptive)
 		//we implement later ft_adaptive
 	//else 
 		//we implement later ft_adaptive (default)

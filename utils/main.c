@@ -35,7 +35,7 @@ int	main(int ac, char **av)
 	char		*joined;
 
 	skip = init_stack(&av, &ac, &joined, &op);
-	if (!av || !joined || ac < 2 || skip == - 1)
+	if (!av || !joined || ac < 2 || skip == -1)
 		return (liberty(NULL, NULL, joined, av));
 	a = ft_verfier(av, ac, skip);
 	if (!a)

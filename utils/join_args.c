@@ -12,7 +12,6 @@
 
 #include "../push_swap.h"
 
-
 static char	*new_arg(char **av, int ac, char *new_str)
 {
 	int		i;

@@ -9,11 +9,12 @@ SOURCE = sort/simple/ft_simple.c \
 	sort/medium/ft_medium_max.c \
 	sort/medium/ft_medium.c \
 	sort/complex/ft_complex_utils.c \
+	sort/complex/complex.c \
 	utils/algorithm_general.c \
 	utils/create_stack.c \
 	utils/display_bench.c \
 	utils/ft_split.c \
-	utils/ft_sqrt.c \
+	utils/coordinate.c \
 	utils/handel_input.c \
 	utils/handel_option.c \
 	utils/join_args.c \

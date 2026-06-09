@@ -17,7 +17,6 @@
 # include <unistd.h>
 # include <stdarg.h>
 
-
 typedef struct s_stack
 {
 	int	*tab;
@@ -91,5 +90,8 @@ int		ft_count_words(char *s, char c);
 void	free_split(char **split);
 char	*join_args(char **av, int ac);
 void	radix_sort(t_stack *a, t_stack *b, t_benchmark *bench);
+int		better_cost(t_stack *b, int min);
+int		mosts_digit(int n, int base);
+int		better_base(int nb);
 
 #endif

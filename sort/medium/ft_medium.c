@@ -1,6 +1,5 @@
 #include "../../push_swap.h"
 
-
 int	find_max_index(t_stack *b)
 {
 	int	max;
@@ -36,7 +35,7 @@ int	swap_to_top(t_stack *b, t_benchmark *bench)
 static void	medium_sort_a(t_stack *a, t_stack *b, t_benchmark *bench)
 {
 	int	max_i;
-	
+
 	while (b->top > -1)
 	{
 		max_i = find_max_index(b);

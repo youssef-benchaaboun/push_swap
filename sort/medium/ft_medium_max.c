@@ -32,5 +32,5 @@ void	max_to_top(t_stack *b, t_benchmark *bench, int max_idx)
 	if (rotate <= re_rotate)
 		max_rb(b, bench, rotate);
 	else
-		max_rrb(b,bench, re_rotate);
+		max_rrb(b, bench, re_rotate);
 }

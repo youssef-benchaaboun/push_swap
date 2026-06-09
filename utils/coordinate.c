@@ -18,9 +18,9 @@ static int	ft_sqrt(int nb)
 
 int	ft_find_sqrt(int nb)
 {
-	while(ft_sqrt(nb) == 0)
+	while (ft_sqrt(nb) == 0)
 		nb++;
-	return(ft_sqrt(nb));
+	return (ft_sqrt(nb));
 }
 
 int	*ft_range(int min, int max)
@@ -42,11 +42,25 @@ int	*ft_range(int min, int max)
 	return (range);
 }
 
+static int	count_smaller(t_stack *a, int idx)
+{
+	int	j;
+	int	count;
+
+	j = 0;
+	count = 0;
+	while (j <= a->top)
+	{
+		if (a->tab[j] < a->tab[idx])
+			count++;
+		j++;
+	}
+	return (count);
+}
+
 void	ft_coordinate(t_stack *a)
 {
 	int	i;
-	int	j;
-	int	count;
 	int	*temp;
 
 	temp = malloc((a->top + 1) * sizeof(int));
@@ -55,15 +69,7 @@ void	ft_coordinate(t_stack *a)
 	i = 0;
 	while (i <= a->top)
 	{
-		count = 0;
-		j = 0;
-		while (j <= a->top)
-		{
-			if (a->tab[j] < a->tab[i])
-				count++;
-			j++;
-		}
-		temp[i] = count;
+		temp[i] = count_smaller(a, i);
 		i++;
 	}
 	i = 0;
