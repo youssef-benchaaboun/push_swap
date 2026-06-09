@@ -1,4 +1,4 @@
-#include "push_swap.h"
+#include "../../push_swap.h"
 
 static void	max_rb(t_stack *b, t_benchmark *bench, int n)
 {

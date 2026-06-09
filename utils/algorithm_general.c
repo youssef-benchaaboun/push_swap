@@ -1,4 +1,4 @@
-#include "push_swap.h"
+#include "../push_swap.h"
 
 void	ft_bzero(void *p, size_t size)
 {
@@ -19,10 +19,10 @@ int	ft_disorder(t_stack *a)
 	mistakes = 0;
 	total_pairs = 0;
 	i = 0;
-	while (i < (a->top))
+	while (i <= (a->top))
 	{
 		j = i + 1;
-		while (j < (a->top))
+		while (j <= (a->top))
 		{
 			total_pairs += 1;
 			if (a->tab[i] > a->tab[j])
@@ -46,9 +46,9 @@ static t_benchmark	*intiat_bench(t_stack *a, t_option *op)
 	if (op->simple)
 		bench->startegy = "Simple / O(n^2)";
 	else if (op->medium)
-		bench->startegy = "medium / O(n log(n))";
+		bench->startegy = "medium / O(n√n)";
 	else if (op->complx)
-		bench->startegy = "Complex /  O(n√n)";
+		bench->startegy = "Complex /  O(n log(n))";
 	//else if(op->adaptive)
 		//we implent late bench->startegy
 	//else
@@ -66,8 +66,8 @@ void	decide_algorithm(t_stack *a, t_stack *b, t_option *op, int argc)
 		ft_simple(a, b, bench);
 	else if(op->medium)
 		ft_medium(a, b, bench, argc);
-	//else if(op->complx)
-		//we implement later ft_complex
+	else if(op->complx)
+		radix_sort(a,b,bench);
 	//else if(op->adaptive)
 		//we implement later ft_adaptive
 	//else 

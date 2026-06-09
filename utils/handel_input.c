@@ -1,4 +1,4 @@
-#include "push_swap.h"
+#include "../push_swap.h"
 
 int	ft_strlen(char *s)
 {
@@ -46,10 +46,10 @@ t_stack	*ft_verfier(char *s[], int l, int skip)
 	t_stack	*st;
 
 	i = l - 1;
-	st = create_stack(l - 1 - skip);
+	st = create_stack(l - skip);
 	if (!st)
 		return (NULL);
-	while (i >= 1 + skip)
+	while (i >= skip)
 	{
 		if (ft_parse(s[i], &value))
 			return (destroy_stack(st));

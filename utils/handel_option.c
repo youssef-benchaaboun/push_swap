@@ -1,4 +1,4 @@
-#include "push_swap.h"
+#include "../push_swap.h"
 
 int	ft_strcmp(char *s1, char *s2)
 {
@@ -47,10 +47,10 @@ int	ft_skip(t_option *op, char **av, int ac)
 	int	skip;
 
 	ft_bzero(op, sizeof(t_option));
-	skip = ft_option(av[1], op);
+	skip = ft_option(av[0], op);
 	if (1 + skip >= ac)
 		return (-1);
-	skip += ft_option(av[1 + skip], op);
+	skip += ft_option(av[skip], op);
 	if (1 + skip >= ac)
 		return (-1);
 	return (skip);

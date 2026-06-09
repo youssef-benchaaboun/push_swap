@@ -90,5 +90,6 @@ char	*ft_strdup(char *s);
 int		ft_count_words(char *s, char c);
 void	free_split(char **split);
 char	*join_args(char **av, int ac);
+void	radix_sort(t_stack *a, t_stack *b, t_benchmark *bench);
 
 #endif

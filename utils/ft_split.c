@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 int	ft_count_words(char *s, char c)
 {
@@ -28,9 +28,9 @@ int	ft_count_words(char *s, char c)
 	return (count);
 }
 
-static char	*ft_substr(char *s, unsigned int start, size_t len)
+static char	*ft_substr(char *s, int start, int len)
 {
-	size_t	i;
+	int		i;
 	char	*str;
 
 	i = 0;
@@ -67,10 +67,10 @@ static char	**ft_free_str(char **str, int count)
 	return (NULL);
 }
 
-static char	**ft_matrix(char **m, char *s, char c, size_t len)
+static char	**ft_matrix(char **m, char *s, char c, int len)
 {
-	size_t	i;
-	size_t	j;
+	int	i;
+	int	j;
 	int		start;
 
 	start = -1;

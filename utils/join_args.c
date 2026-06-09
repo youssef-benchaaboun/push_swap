@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 
 static char	*new_arg(char **av, int ac, char *new_str)
@@ -39,8 +39,6 @@ char	*join_args(char **av, int ac)
 	char	*result;
 	int		total_len;
 	int		i;
-	int		j;
-	int		k;
 
 	total_len = 0;
 	i = 0;

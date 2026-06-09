@@ -1,4 +1,4 @@
-#include "push_swap.h"
+#include "../../push_swap.h"
 
 static int	find_chunk_index(t_stack *a, int range_max)
 {
@@ -28,20 +28,18 @@ static void	move_chunk_top(t_stack *a, t_benchmark *bench, int idx)
 	rra_cost = idx + 1;
 	if (ra_cost <= rra_cost)
 	{
-		while (a->top - idx > 0)
+		while (ra_cost-- > 0)
 		{
 			rotate_stack(a, 'a');
 			bench->ra++;
-			idx++;
 		}
 	}
 	else
 	{
-		while (idx >= 0)
+		while (rra_cost-- > 0)
 		{
 			re_rotate_stack(a, 'a');
 			bench->rra++;
-			idx--;
 		}
 	}
 }
